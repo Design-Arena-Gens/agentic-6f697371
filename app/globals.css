@@ -1,0 +1,166 @@
+:root {
+  color-scheme: light dark;
+  font-family: "Figtree", system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top left, #fde68a, #fef3c7 45%, #f5f3ff);
+  color: #111827;
+  min-height: 100vh;
+}
+
+.app-shell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 4rem 1.5rem;
+}
+
+.card {
+  width: min(940px, 100%);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(18px);
+  border-radius: 28px;
+  box-shadow: 0 25px 55px rgba(15, 23, 42, 0.22);
+  padding: 3rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.card h1 {
+  font-size: clamp(2.2rem, 2.7vw + 1rem, 3.2rem);
+  margin: 0;
+  color: #1f2937;
+}
+
+.subtitle {
+  margin: 0;
+  line-height: 1.5;
+  color: #4b5563;
+  font-size: clamp(1rem, 0.7vw + 1rem, 1.125rem);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.slider-group {
+  flex: 1;
+  min-width: 220px;
+}
+
+.slider-group label {
+  display: block;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.slider-group input[type="range"] {
+  width: 100%;
+  accent-color: #f97316;
+}
+
+.button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.85rem 1.75rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  cursor: pointer;
+  background: linear-gradient(135deg, #f97316, #fb923c);
+  color: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 14px 30px rgba(249, 115, 22, 0.35);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  box-shadow: none;
+}
+
+.button:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(249, 115, 22, 0.45);
+}
+
+.button.secondary {
+  background: rgba(30, 64, 175, 0.08);
+  color: #1e3a8a;
+  box-shadow: none;
+}
+
+.button.secondary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 25px rgba(30, 64, 175, 0.2);
+}
+
+.canvas-wrapper {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  background: radial-gradient(circle at 20% 20%, #fef9c3, #fee2e2 40%, #ede9fe 80%);
+  min-height: 360px;
+  display: grid;
+  place-items: center;
+}
+
+canvas {
+  width: min(680px, 100%);
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  background: transparent;
+}
+
+.video-output {
+  display: grid;
+  gap: 1rem;
+}
+
+.video-output video {
+  width: 100%;
+  border-radius: 20px;
+  border: 3px solid rgba(249, 115, 22, 0.25);
+  background: #fff;
+}
+
+.tips {
+  display: grid;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  background: rgba(30, 64, 175, 0.1);
+  color: #1e3a8a;
+  font-weight: 600;
+}
+
+@media (max-width: 720px) {
+  .card {
+    padding: 2rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
